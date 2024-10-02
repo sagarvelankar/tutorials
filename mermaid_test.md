@@ -25,6 +25,20 @@ stateDiagram-v2
                 devops_nonprod01_aws_account : devops-nonprod01
                 devops_nonprod01_aws_account : AWS account
             }
+            orgunit01_nonprod01_aws_ou : orgunit01-nonprod01 AWS OU
+            state orgunit01_nonprod01_aws_ou {
+                direction LR
+                orgunit01_comptest01_aws_account : orgunit01-comptest01
+                orgunit01_comptest01_aws_account : AWS account
+                orgunit01_inttest01_aws_account : orgunit01-inttest01
+                orgunit01_inttest01_aws_account : AWS account
+                orgunit01_e2etest01_aws_account : orgunit01-e2etest01
+                orgunit01_e2etest01_aws_account : AWS account
+                orgunit01_perftest01_aws_account : orgunit01-perftest01
+                orgunit01_perftest01_aws_account : AWS account
+                orgunit01_nonprod01_aws_account : orgunit01-nonprod01
+                orgunit01_nonprod01_aws_account : AWS account
+            }
         }
         prod_aws_ou : prod AWS OU
         examplebank_aws_organization --> prod_aws_ou
@@ -36,6 +50,14 @@ stateDiagram-v2
                 devops_prod_aws_account : AWS account
                 devops_dr_aws_account : devops-dr
                 devops_dr_aws_account : AWS account            
+            }
+            orgunit01_prod_aws_ou : orgunit01-prod AWS OU
+            state orgunit01_prod_aws_ou {
+                direction LR
+                orgunit01_prod_aws_account : orgunit01-prod
+                orgunit01_prod_aws_account : AWS account
+                orgunit01_dr_aws_account : orgunit01-dr
+                orgunit01_dr_aws_account : AWS account            
             }
         }
     }
