@@ -14,6 +14,76 @@ stateDiagram-v2
         nonprod_aws_ou : nonprod AWS OU
         examplebank_aws_organization --> nonprod_aws_ou
         state nonprod_aws_ou {
+            compute_nonprod_aws_ou : compute-nonprod AWS OU
+            state compute_nonprod_aws_ou {
+                direction LR
+                compute_nonprod_aws_account : compute-nonprod
+                compute_nonprod_aws_account : AWS account (GitOps)
+                compute_comptest_aws_account : compute-comptest
+                compute_comptest_aws_account : AWS account
+                compute_inttest_aws_account : compute-inttest
+                compute_inttest_aws_account : AWS account
+                compute_e2etest_aws_account : compute-e2etest
+                compute_e2etest_aws_account : AWS account
+                compute_perftest_aws_account : compute-perftest
+                compute_perftest_aws_account : AWS account
+            }
+            storage_nonprod_aws_ou : storage-nonprod AWS OU
+            state storage_nonprod_aws_ou {
+                direction LR
+                storage_nonprod_aws_account : storage-nonprod
+                storage_nonprod_aws_account : AWS account (GitOps)
+                storage_comptest_aws_account : storage-comptest
+                storage_comptest_aws_account : AWS account
+                storage_inttest_aws_account : storage-inttest
+                storage_inttest_aws_account : AWS account
+                storage_e2etest_aws_account : storage-e2etest
+                storage_e2etest_aws_account : AWS account
+                storage_perftest_aws_account : storage-perftest
+                storage_perftest_aws_account : AWS account
+            }
+            network_nonprod_aws_ou : network-nonprod AWS OU
+            state network_nonprod_aws_ou {
+                direction LR
+                network_nonprod_aws_account : network-nonprod
+                network_nonprod_aws_account : AWS account (GitOps)
+                network_comptest_aws_account : network-comptest
+                network_comptest_aws_account : AWS account
+                network_inttest_aws_account : network-inttest
+                network_inttest_aws_account : AWS account
+                network_e2etest_aws_account : network-e2etest
+                network_e2etest_aws_account : AWS account
+                network_perftest_aws_account : network-perftest
+                network_perftest_aws_account : AWS account
+            }
+            security_nonprod_aws_ou : security-nonprod AWS OU
+            state security_nonprod_aws_ou {
+                direction LR
+                security_nonprod_aws_account : security-nonprod
+                security_nonprod_aws_account : AWS account (GitOps)
+                security_comptest_aws_account : security-comptest
+                security_comptest_aws_account : AWS account
+                security_inttest_aws_account : security-inttest
+                security_inttest_aws_account : AWS account
+                security_e2etest_aws_account : security-e2etest
+                security_e2etest_aws_account : AWS account
+                security_perftest_aws_account : security-perftest
+                security_perftest_aws_account : AWS account
+            }
+            ocm_nonprod_aws_ou : ocm-nonprod AWS OU
+            state ocm_nonprod_aws_ou {
+                direction LR
+                ocm_nonprod_aws_account : ocm-nonprod
+                ocm_nonprod_aws_account : AWS account (GitOps)
+                ocm_comptest_aws_account : ocm-comptest
+                ocm_comptest_aws_account : AWS account
+                ocm_inttest_aws_account : ocm-inttest
+                ocm_inttest_aws_account : AWS account
+                ocm_e2etest_aws_account : ocm-e2etest
+                ocm_e2etest_aws_account : AWS account
+                ocm_perftest_aws_account : ocm-perftest
+                ocm_perftest_aws_account : AWS account
+            }
             devops_nonprod_aws_ou : devops-nonprod AWS OU
             state devops_nonprod_aws_ou {
                 direction LR
@@ -27,6 +97,62 @@ stateDiagram-v2
                 devops_e2etest_aws_account : AWS account
                 devops_perftest_aws_account : devops-perftest
                 devops_perftest_aws_account : AWS account
+            }
+            middleware_nonprod_aws_ou : middleware-nonprod AWS OU
+            state middleware_nonprod_aws_ou {
+                direction LR
+                middleware_nonprod_aws_account : middleware-nonprod
+                middleware_nonprod_aws_account : AWS account (GitOps)
+                middleware_comptest_aws_account : middleware-comptest
+                middleware_comptest_aws_account : AWS account
+                middleware_inttest_aws_account : middleware-inttest
+                middleware_inttest_aws_account : AWS account
+                middleware_e2etest_aws_account : middleware-e2etest
+                middleware_e2etest_aws_account : AWS account
+                middleware_perftest_aws_account : middleware-perftest
+                middleware_perftest_aws_account : AWS account
+            }
+            database_nonprod_aws_ou : database-nonprod AWS OU
+            state database_nonprod_aws_ou {
+                direction LR
+                database_nonprod_aws_account : database-nonprod
+                database_nonprod_aws_account : AWS account (GitOps)
+                database_comptest_aws_account : database-comptest
+                database_comptest_aws_account : AWS account
+                database_inttest_aws_account : database-inttest
+                database_inttest_aws_account : AWS account
+                database_e2etest_aws_account : database-e2etest
+                database_e2etest_aws_account : AWS account
+                database_perftest_aws_account : database-perftest
+                database_perftest_aws_account : AWS account
+            }
+            observability_nonprod_aws_ou : observability-nonprod AWS OU
+            state observability_nonprod_aws_ou {
+                direction LR
+                observability_nonprod_aws_account : observability-nonprod
+                observability_nonprod_aws_account : AWS account (GitOps)
+                observability_comptest_aws_account : observability-comptest
+                observability_comptest_aws_account : AWS account
+                observability_inttest_aws_account : observability-inttest
+                observability_inttest_aws_account : AWS account
+                observability_e2etest_aws_account : observability-e2etest
+                observability_e2etest_aws_account : AWS account
+                observability_perftest_aws_account : observability-perftest
+                observability_perftest_aws_account : AWS account
+            }
+            finops_nonprod_aws_ou : finops-nonprod AWS OU
+            state finops_nonprod_aws_ou {
+                direction LR
+                finops_nonprod_aws_account : finops-nonprod
+                finops_nonprod_aws_account : AWS account (GitOps)
+                finops_comptest_aws_account : finops-comptest
+                finops_comptest_aws_account : AWS account
+                finops_inttest_aws_account : finops-inttest
+                finops_inttest_aws_account : AWS account
+                finops_e2etest_aws_account : finops-e2etest
+                finops_e2etest_aws_account : AWS account
+                finops_perftest_aws_account : finops-perftest
+                finops_perftest_aws_account : AWS account
             }
         }
         nonprod01_aws_ou : nonprod01 AWS OU
