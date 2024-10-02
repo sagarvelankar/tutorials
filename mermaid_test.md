@@ -254,6 +254,46 @@ stateDiagram-v2
         prod_aws_ou : prod AWS OU
         examplebank_aws_organization --> prod_aws_ou
         state prod_aws_ou {
+            compute_prod_aws_ou : compute-prod AWS OU
+            state compute_prod_aws_ou {
+                direction LR
+                compute_prod_aws_account : compute-prod
+                compute_prod_aws_account : AWS account (GitOps)
+                compute_dr_aws_account : compute-dr
+                compute_dr_aws_account : AWS account (GitOps)  
+            }
+            storage_prod_aws_ou : storage-prod AWS OU
+            state storage_prod_aws_ou {
+                direction LR
+                storage_prod_aws_account : storage-prod
+                storage_prod_aws_account : AWS account (GitOps)
+                storage_dr_aws_account : storage-dr
+                storage_dr_aws_account : AWS account (GitOps)  
+            }
+            network_prod_aws_ou : network-prod AWS OU
+            state network_prod_aws_ou {
+                direction LR
+                network_prod_aws_account : network-prod
+                network_prod_aws_account : AWS account (GitOps)
+                network_dr_aws_account : network-dr
+                network_dr_aws_account : AWS account (GitOps)  
+            }
+            security_prod_aws_ou : security-prod AWS OU
+            state security_prod_aws_ou {
+                direction LR
+                security_prod_aws_account : security-prod
+                security_prod_aws_account : AWS account (GitOps)
+                security_dr_aws_account : security-dr
+                security_dr_aws_account : AWS account (GitOps)  
+            }
+            ocm_prod_aws_ou : ocm-prod AWS OU
+            state ocm_prod_aws_ou {
+                direction LR
+                ocm_prod_aws_account : ocm-prod
+                ocm_prod_aws_account : AWS account (GitOps)
+                ocm_dr_aws_account : ocm-dr
+                ocm_dr_aws_account : AWS account (GitOps)  
+            }
             devops_prod_aws_ou : devops-prod AWS OU
             state devops_prod_aws_ou {
                 direction LR
@@ -261,6 +301,38 @@ stateDiagram-v2
                 devops_prod_aws_account : AWS account (GitOps)
                 devops_dr_aws_account : devops-dr
                 devops_dr_aws_account : AWS account (GitOps)  
+            }
+            middleware_prod_aws_ou : middleware-prod AWS OU
+            state middleware_prod_aws_ou {
+                direction LR
+                middleware_prod_aws_account : middleware-prod
+                middleware_prod_aws_account : AWS account (GitOps)
+                middleware_dr_aws_account : middleware-dr
+                middleware_dr_aws_account : AWS account (GitOps)  
+            }
+            database_prod_aws_ou : database-prod AWS OU
+            state database_prod_aws_ou {
+                direction LR
+                database_prod_aws_account : database-prod
+                database_prod_aws_account : AWS account (GitOps)
+                database_dr_aws_account : database-dr
+                database_dr_aws_account : AWS account (GitOps)  
+            }
+            observability_prod_aws_ou : observability-prod AWS OU
+            state observability_prod_aws_ou {
+                direction LR
+                observability_prod_aws_account : observability-prod
+                observability_prod_aws_account : AWS account (GitOps)
+                observability_dr_aws_account : observability-dr
+                observability_dr_aws_account : AWS account (GitOps)  
+            }
+            finops_prod_aws_ou : finops-prod AWS OU
+            state finops_prod_aws_ou {
+                direction LR
+                finops_prod_aws_account : finops-prod
+                finops_prod_aws_account : AWS account (GitOps)
+                finops_dr_aws_account : finops-dr
+                finops_dr_aws_account : AWS account (GitOps)  
             }
             orgunit01_prod_aws_ou : orgunit01-prod AWS OU
             state orgunit01_prod_aws_ou {
