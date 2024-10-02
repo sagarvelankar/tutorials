@@ -28,6 +28,16 @@ stateDiagram-v2
         }
         prod_aws_ou : prod AWS OU
         examplebank_aws_organization --> prod_aws_ou
+        state prod_aws_ou {
+            devops_prod_aws_ou : devops-prod AWS OU
+            state devops_prod_aws_ou {
+                direction LR
+                devops_prod_aws_account : devops-prod
+                devops_prod_aws_account : AWS account
+                devops_dr_aws_account : devops-dr
+                devops_dr_aws_account : AWS account            
+            }
+        }
     }
     azure_public_cloud : Azure Public cloud
     example_bank_organization --> azure_public_cloud
