@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml",
+    "kubernetes://schema/apiextensions.k8s.io/v1@customresourcedefinition+apiextensions.k8s.io/v1@customresourcedefinition+apiextensions.k8s.io/v1@customresourcedefinition+v1@serviceaccount+v1@serviceaccount+v1@serviceaccount+v1@serviceaccount+rbac.authorization.k8s.io/v1@role+rbac.authorization.k8s.io/v1@role+rbac.authorization.k8s.io/v1@role+rbac.authorization.k8s.io/v1@clusterrole+rbac.authorization.k8s.io/v1@rolebinding+rbac.authorization.k8s.io/v1@rolebinding+rbac.authorization.k8s.io/v1@rolebinding+rbac.authorization.k8s.io/v1@clusterrolebinding+v1@configmap+v1@configmap+v1@configmap+v1@configmap+v1@configmap+v1@configmap+v1@secret+v1@service+v1@service+v1@service+v1@service+apps/v1@deployment+apps/v1@deployment+apps/v1@deployment+apps/v1@statefulset+networking.k8s.io/v1@networkpolicy+networking.k8s.io/v1@networkpolicy+networking.k8s.io/v1@networkpolicy+networking.k8s.io/v1@networkpolicy": "file:///Users/sagarvelankar/vscode/sagarvelankar/tutorials/argocd/core-install.yaml"
+  }
+}

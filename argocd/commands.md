@@ -154,5 +154,16 @@ EOF
 
 Add dashboard https://raw.githubusercontent.com/argoproj/argo-cd/master/examples/dashboard.json
 
-
 kubectl config set-context --current --namespace=argocd
+
+helm repo add jenkinsci https://charts.jenkins.io
+helm repo update
+
+cat <<EOF > /tmp/devops-backstage-postgresql-values.yaml
+EOF
+
+helm template devops-backstage-postgresql oci://registry-1.docker.io/bitnamicharts/postgresql -f /tmp/devops-backstage-postgresql-values.yaml -n devops-backstage --create-namespace --include-crds > argocd/devops-backstage-postgresql.yaml
+
+argocd app create devops-backstage-postgresql --repo https://github.com/sagarvelankar/devops-backstage-postgresql-gitops.git --path argocd --dest-server https://kubernetes.default.svc --dest-namespace devops-backstage --revision component --sync-policy automated --auto-prune --self-heal --sync-option CreateNamespace=true --directory-include "*.yaml"
+
+Port forwarding in rancher desktop
